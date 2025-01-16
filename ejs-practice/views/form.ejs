@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add User</title>
+</head>
+<body>
+  <h1 align="center">Add New User</h1>
+  <form action="/adduser" method="post">
+    <table border="1" align="center">
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="username" required></td>
+      </tr>
+      <tr>
+        <td>Phone:</td>
+        <td><input type="text" name="userphone" required></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <button type="submit">Add User</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+  <div align="center">
+    <a href="/">Go Back</a>
+  </div>
+</body>
+</html>

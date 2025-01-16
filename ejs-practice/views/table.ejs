@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users Table</title>
+</head>
+<body>
+  <h1 align="center">Users Table</h1>
+  <table border="1" align="center">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% record.map((val, index) => { %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= val.name %></td>
+        <td><%= val.phone %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <div align="center">
+    <a href="/form">Add New User</a>
+  </div>
+</body>
+</html>
