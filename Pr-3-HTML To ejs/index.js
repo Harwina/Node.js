@@ -34,6 +34,9 @@ app.get('/form-basic',(req,res)=>{
 app.get('/form-wizard',(req,res)=>{
     return res.render('form-wizard')
 })
+app.get('/grid',(req,res)=>{
+    return res.render('grid')
+})
 
 app.get('/pages-button',(req,res)=>{
     return res.render('pages-button')

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-container label {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-container input[type="text"], 
+        .form-container input[type="number"], 
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-container input:focus {
+            outline: none;
+            border-color: #ffa500;
+            box-shadow: 0 0 5px #ffa500;
+        }
+        .form-container button {
+            background-color: #ffa500;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #e69500;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Add Book</h1>
+    <form action="/adduser" method="POST">
+        <label for="name">Book Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="price">description:</label>
+        <input type="text" id="description" name="price" required><br>
+        <label for="price">price:</label>
+        <input type="text" id="price" name="page" required><br>
+        <label for="author">Author:</label>
+        <input type="text" id="auther" name="author" required><br>
+        <button type="submit">Add Book</button>
+    </form>
+    </div>
+</body>
+</html>

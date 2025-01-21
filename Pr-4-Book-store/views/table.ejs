@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+</head>
+<body>
+    <h1>Bookstore</h1>
+    <a href="/add">Add New Book</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Price</th>
+                <th>Pages</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% books.forEach((book, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= book.BookName %></td>
+                    <td><%= book.Price %></td>
+                    <td><%= book.BookPages %></td>
+                    <td><%= book.BookAuthor %></td>
+                    <td>
+                        <a href="/edit/<%= book._id %>">Edit</a>
+                        <a href="/delete/<%= book._id %>">Delete</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
