@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Movie | BookMyShow Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("https://play-lh.googleusercontent.com/QhwLVx7kPxNj1RT33jcvKJXgnUNPek7y1D12T85W8QGDCskQvmDX-OGhKQ88P9-B8Gc") no-repeat center fixed;
+            background-size: cover; /* Ensures the image covers the entire screen */
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #fff; /* White background */
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Ensures navbar is not affected by body bg */
+            z-index: 10;
+        }
+        .navbar h2 {
+            color: red;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        form{
+            width: 95%;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: red;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>BookMyShow Clone</h2>
+        <a href="/movies">🎬 View Movies</a>
+    </div>
+
+    <div class="container">
+        <h2>Add a New Movie</h2>
+        <form action="/movies/add" method="POST" enctype="multipart/form-data">
+            <label>Title</label>
+            <input type="text" name="title" required>
+        
+            <label>Price</label>
+            <input type="text" name="genre" required>
+        
+            <label>Description</label>
+            <textarea name="description" required></textarea>
+        
+            <label>Release Date</label>
+            <input type="date" name="releaseDate" required>
+        
+            <label>Poster</label>
+            <input type="file" name="poster" accept="image/*">
+        
+            <label>Video Link (YouTube/MP4 URL)</label>
+            <input type="text" name="videoLink" placeholder="Enter YouTube or MP4 link">
+        
+            <button type="submit">Add Movie</button>
+        </form>
+        
+    </div>
+</body>
+</html>

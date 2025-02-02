@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User List</title>
+</head>
+
+<body>
+    <h2 align="center">User List</h2>
+    <table align="center" border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Hobby</th>
+            <th>City</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        <% record.map((user)=> { %>
+            <tr>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.gender %>
+                </td>
+                <td>
+                    <%= user.hobby.join(", ") %></td>
+            <td><%= user.city %></td>
+            <td>
+                <% if (user.image) { %>
+                    <img src=" <%=user.image %>" name="image" width="50">
+                        <% } else { %>
+                            No Image
+                            <% } %>
+                </td>
+
+                <td>
+                    <a href="/crud/edit/<%= user._id %>">Edit</a>
+ <a href="/crud/delete/<%= user._id %>" onclick="return confirm('Are you sure?');">Delete</a>                </td>
+
+            </tr>
+            <% }); %>
+    </table>
+    <br>
+    <div align="center">
+        <a href="/crud/add">Add New User</a>
+    </div>
+</body>
+
+</html>

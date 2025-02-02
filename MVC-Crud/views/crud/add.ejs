@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .radio-group label, .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 align="center">Add New User</h2>
+        <form action="/crud/addUser" method="POST" enctype="multipart/form-data">
+            
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <!-- Gender (Radio Buttons) -->
+            <label>Gender:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                <label><input type="radio" name="gender" value="Female" required> Female</label>
+            </div>
+
+            <!-- Hobby (Checkboxes) -->
+            <label>Hobby:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobby" value="Reading"> Reading</label>
+                <label><input type="checkbox" name="hobby" value="Music"> Music</label>
+                <label><input type="checkbox" name="hobby" value="Sports"> Sports</label>
+            </div>
+
+            <!-- City (Dropdown) -->
+            <label for="city">City:</label>
+            <select name="city" required>
+                <option value="Surat">Surat</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+            </select>
+
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+        <div align="center">
+            <a href="/crud">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>

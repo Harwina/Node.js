@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        label {
+            font-weight: bold;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 align="center">Edit User</h2>
+        <form action="/crud/update/<%= user._id %>" method="POST" enctype="multipart/form-data">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="<%= user.name %>" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" value="<%= user.email %>" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" value="<%= user.password %>" required>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" required>
+                <option value="Male" <%= user.gender === 'Male' ? 'selected' : '' %>>Male</option>
+                <option value="Female" <%= user.gender === 'Female' ? 'selected' : '' %>>Female</option>
+            </select>
+
+            <label for="hobby">Hobby:</label>
+            <input type="text" name="hobby" value="<%= user.hobby.join(', ') %>" required>
+
+            <label for="city">City:</label>
+            <input type="text" name="city" value="<%= user.city %>" required>
+
+            <label for="image">Current Image:</label><br>
+            <% if (user.image) { %>
+                <img src="<%= user.image %>" alt="User Image">
+            <% } else { %>
+                <p>No image uploaded</p>
+            <% } %>
+
+            <label for="image">Upload New Image:</label>
+            <input type="file" name="image">
+
+            <button type="submit">Update</button>
+        </form>
+        <br>
+        <div align="center">
+            <a href="/crud">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= movie.title %> - Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+        .movie-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-video {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2><%= movie.title %></h2>
+        <img src="<%= movie.poster %>" alt="<%= movie.title %>" class="movie-img">
+        <p><strong>Genre:</strong> <%= movie.genre %></p>
+        <p><strong>Description:</strong> <%= movie.description %></p>
+        <p><strong>Release Date:</strong> <%= movie.releaseDate.toDateString() %></p>
+
+        <% if (movie.videoLink) { %>
+            <% if (movie.videoLink.includes("youtube.com") || movie.videoLink.includes("youtu.be")) { %>
+                <!-- Embed YouTube Video -->
+                <iframe class="movie-video" src="<%= movie.videoLink.replace('watch?v=', 'embed/') %>" frameborder="0" allowfullscreen></iframe>
+            <% } else { %>
+                <!-- Play MP4 Video -->
+                <video class="movie-video" controls>
+                    <source src="<%= movie.videoLink %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <% } %>
+        <% } else { %>
+            <p>No video available for this movie.</p>
+        <% } %>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= movie.title %> - Movie Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+        }
+        .movie-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .movie-video {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2><%= movie.title %></h2>
+        <img src="<%= movie.poster %>" alt="<%= movie.title %>" class="movie-img">
+        <p><strong>Genre:</strong> <%= movie.genre %></p>
+        <p><strong>Description:</strong> <%= movie.description %></p>
+        <p><strong>Release Date:</strong> <%= movie.releaseDate.toDateString() %></p>
+
+        <% if (movie.videoLink) { %>
+            <% if (movie.videoLink.includes("youtube.com") || movie.videoLink.includes("youtu.be")) { %>
+                <!-- Embed YouTube Video -->
+                <iframe class="movie-video" src="<%= movie.videoLink.replace('watch?v=', 'embed/') %>" frameborder="0" allowfullscreen></iframe>
+            <% } else { %>
+                <!-- Play MP4 Video -->
+                <video class="movie-video" controls>
+                    <source src="<%= movie.videoLink %>" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            <% } %>
+        <% } else { %>
+            <p>No video available for this movie.</p>
+        <% } %>
+    </div>
+
+</body>
+</html>
